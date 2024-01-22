@@ -43,7 +43,34 @@ type= none 空
 colspan="" 水平合并 保留左边
 rowspan="" 垂直合并 保留上边
 
+Form 表单（用户输入的地方）
+1.容器
+2.控件（输入框，按钮）
+action ：服务器网址
+name ：表单名称
+method ：方式
+{
+  get url
+  post
+}
+<input>: 输入框 -> type = "submit" （有提交按钮）
+<button> name </button> 按钮
+alert("") 弹窗
 
+文本框：<input type="text" name="">
+密码框：<input type="password">
+提交框：<input type="submit" value="按钮文字 ">
+
+内联元素和块元素
+
+div(容器元素)
+H5新增容器
+<header><header> 头部
+<nav><nav> 导航栏
+<article><article> 
+<section><section>
+<aside><aside> 侧边栏
+<footer><footer> 底部
 
 
 
