@@ -1,2 +1,117 @@
+CSS操作
+
+关联方式
+1 内联样式（杂乱、不易维护）
+2 内部样式（多个页面容易混乱）
+<style>标签
+3 外部样式（运用于多个页面）
+使用<link herf="css文件">标签
+
+css 语法组成
+选择器+声明
+
+1.全局选择器（级别最低）
+*{} 一般用作初始化
+
+2.元素选择器
+p、b、div 等标签
+选择同种元素
+<span></span>标签选择器
+
+3.类选择器（灵活）
+例 <h2 class = "name">
+索引方式
+· "类名"{} 多个类名中间用 ， 分隔
+同个标签可以用多个类选择器（用空格分开）
+
+4. ID选择器
+例<h2 id="name"> 一个id只能使用一次，不能以数字开头
+索引方式
+# "id名"{}
+
+-------------------------------------------------
+
+字体属性
+
+颜色（三种方式）
+1.对应十六进制数字
+2.英文单词
+3.RGB三原色通道
+
+字体大小
+font-size 接受最小值：12px
+
+字体粗细
+font-weight
+bold bolder lighter
+100-700px （400为默认）
+
+字体样式
+font-style
+normal 正常
+italic 斜体字
+
+字体
+font-family （宋体、黑体······）
+
+-------------------------------------------------
+
+背景属性
+
+主要属性
+background-color
+
+background-image （url="图片链接"）
+
+background-position 渲染起始位置
+{ left right center top botton }
+
+background-repeat（设置如何平铺背景图像）
+{
+  repeat-x
+  repeat-y
+  no-repeat
+}
+
+background-size
+{
+  1.设置像素大小
+  2.设置百分比大小
+  3.cover 保持图片横纵比并将图片缩放成完全覆盖的最小大小
+  4.contain 保持图片横纵比并将图片缩放成适合背景定位的最大大小
+}
+
+----------------------------------------------------
+
+文本属性
+
+text-align（center left right）
+
+text-decoration
+{  
+  overline 上划线
+  linethrough 下划线
+  underline 下划线
+}
+
+text-transform
+{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
