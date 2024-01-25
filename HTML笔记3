@@ -34,6 +34,95 @@ padding
   margin-button
 }
 
+border
+宽度 类型 颜色
+
+-------------------------------------------------
+
+弹性盒子模型
+设置display属性为 "flex"
+
+默认弹性盒子内容横向摆放
+flex-direction:
+{
+  row 横向
+  row-reverse 横向反转
+  column 纵向
+  column-reverse 纵向反转
+}
+
+父元素性质
+justify-content(内容对齐)
+{
+  flex-start 居上
+  flex-end 居下
+  flex-cen 居中
+}
+
+align-items
+{
+  flex-start 居左
+  flex-end 居右
+  flex-cen 居中
+}
+
+子元素上的性质
+
+文档流
+1.空格折叠（多个空格只显示一个）
+办法：脱离标准 文档流
+{
+  浮动
+  绝对定位
+  固定定位
+}
+
+浮动：增加浮层放置内容
+float属性 ：left right
+应用：ul li标签水平摆放
+
+清除浮动
+设置float后，会使元素脱离文档流移动
+子元素浮动造成父元素高度塌陷
+方案：
+1.父元素设置高度
+2.受影响元素增加clear属性
+clear
+{
+  left
+  right
+  both
+}
+3.overflow 清除浮动
+{
+  overflow ：hidden
+  clear ：both
+}
+4.伪对象方式：after
+格式 ：
+."类名"::after
+{
+  display:block
+  clear:both
+}
+哪个子元素出问题，哪个元素+clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
