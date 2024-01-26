@@ -1,0 +1,454 @@
+4> Math对象
+
+方法：
+
+最大最小：max(),min()
+
+绝对值：abs()
+
+平方根：sqrt()
+
+次幂：pow(num,power)
+
+舍入：ceil(),floor(),round() 分别为向上进位，向下舍位和四舍五入。
+
+随机数：random()随机生成一个介于0到1的随机数。如在lowerValue-upperValue区间生成随机数：Math.floor( Math.random() * (upperValue - lowerValue +1) + lowerValue );
+
+
+5> Function类型
+
+属性：
+
+arguments：是一个类数组对象，包含传入函数中的所有参数。它还包含一个callee的指针属性，反指向该函数，应尽量通过该指针实现递归，因为函数名是可变的。
+
+this：是函数所处作用域。比如在全局作用于中调用函数时，this对象引用就是window。
+
+length：表示函数希望接受的命名参数的个数。
+
+方法：
+
+调用：apply()，call()。需要传递作用域和函数所需的参数。apply()的参数可通过arguments或数组传递；call()的参数必须一个一个传。注意，作用域通常传this，但真正强大的是可借此扩大该函数的作用域。
+
+
+1.getDate() 方法
+作用：可返回月份的某一天。
+语法：Date.getDate()
+例子：
+
+ let date=new Date()
+ let test=date.getDate()
+console.log(test);//输出结果为这个月的多少号。比如今天1月15号，输出结果为：15
+1
+2
+3
+2.getDay() 方法
+作用：可返回一周（0~6）的某一天的数字。星期天为 0, 星期一为 1, 以此类推
+语法：Date.getDay()
+例子：
+
+let date=new Date()
+let test=date.getDay()
+console.log(test);//输出结果根据今天星期几来看，星期天输出0，星期1为1，星期二为2
+1
+2
+3
+3.getFullYear() 方法
+作用：可返回一个表示年份的 4 位数字。
+语法：Date.getFullYear()
+例子：
+
+let date=new Date()
+let test=date.getFullYear()
+console.log(test);//输出结果为当年年份：比如今年2023年，输出结果为：2023
+1
+2
+3
+4.getHours() 方法
+作用：可返回时间的小时字段。返回值是 0 （午夜） 到 23 （晚上 11 点）之间的一个整数。
+语法：Date.getHours()
+例子：
+
+let date=new Date()
+let test=date.getHours()
+console.log(test);//输出结果为当前时间的24小时制时数。比如先在下午三点钟，返回结果为15
+1
+2
+3
+5.getMilliseconds() 方法
+作用：可返回时间的毫秒。返回 Date 对象的毫秒(0 ~ 999)。
+语法：Date.getMilliseconds()
+例子：
+
+let date=new Date()
+let test=date.getMilliseconds()
+console.log(test);//输出结果为当前时间的毫秒数
+
+6.getMinutes() 方法
+作用：可返回时间的分钟字段。返回值是 0 ~ 59 之间的一个整数。
+语法：Date.getMinutes()
+例子：
+
+let date=new Date()
+let test=date.getMinutes()
+console.log(test);//输出结果为当前时间的分钟数。比如现在下午4点5分，输出结果为：5
+
+7.getMonth() 方法
+作用：可返回表示月份的数字。返回值是 0（一月） 到 11（十二月） 之间的一个整数。 一月为 0, 二月为 1, 以此类推。
+语法：Date.getMonth()
+例子：
+
+let date=new Date()
+let test=date.getMonth()
+console.log(test);//输出结果为当前月份减1。比如先在是12月份，输出结果为11
+
+8.getSeconds() 方法
+作用：可返回时间的秒。返回值是 0 ~ 59 之间的一个整数。
+语法：Date.getSeconds()
+例子：
+
+let date=new Date()
+let test=date.getSeconds()
+console.log(test);//输出结果为当前时间的秒数
+
+9.getTime() 方法
+作用：返回距 1970 年 1 月 1 日之间的毫秒数。
+语法：Date.getTime()
+例子：
+
+let date=new Date()
+let test=date.getTime()
+console.log(test);//输出结果为距 1970 年 1 月 1 日之间的毫秒数
+
+10.getTimezoneOffset() 方法
+作用：返回格林威治时间和本地时间之间的时差，以分钟为单位。
+语法：Date.getTimezoneOffset()
+例子：
+
+let date=new Date()
+let test=date.getTimezoneOffset()
+console.log(test);//输出结果：-480
+
+11.getUTCDate() 方法
+作用：根据世界时返回一个月 (UTC) 中的某一天。返回该月中的某一天 （是 1 ~ 31 中的一个值）。
+语法：Date.getUTCDate()
+例子：
+
+let date=new Date()
+let test=date.getUTCDate()
+console.log(test);//比如今天2023年3月2号，输出结果：2
+
+12.getUTCDay() 方法
+作用：根据世界时返回表示星期的一天的一个数字。该值是 0（星期天） ~ 6（星期六） 中的一个值。
+语法：Date.getUTCDay()
+例子：
+
+et date=new Date()
+let test=date.getUTCDay()
+console.log(test);//比如今天是星期四，输出结果：4
+
+13.getUTCFullYear() 方法
+作用：返回根据世界时 (UTC) 表示的四位数字年份。
+语法：Date.getUTCFullYear()
+例子：
+
+let date=new Date()
+let test=date.getUTCFullYear()
+console.log(test);//比如今年是2023年，输出结果：2023
+
+14.getUTCHours() 方法
+作用：根据世界时 (UTC) 返回时间的小时。该值是一个 0（午夜） ~ 23（晚上 11 点） 之间的整数。
+语法：Date.getUTCHours()
+例子：
+
+let date=new Date()
+let test=date.getUTCHours()
+console.log(test);//比如现在时间为上午11：30，输出结果：3。如果获取的北京时间，输出结果为11，因为这个方法获取的是世界时，也叫格林尼治时间，需要减去8，得到3。
+
+15.getUTCMilliseconds() 方法
+作用：可根据世界时 (UTC) 返回时间的毫秒(0~999)。
+语法：Date.getUTCMilliseconds()
+例子：
+
+let date=new Date()
+let test=date.getUTCMilliseconds()
+console.log(test);//输出结果随时都在变，这里就不贴上了
+
+16.getUTCMinutes() 方法
+作用：根据世界时 (UTC) 返回时间的分钟字段（0~59）。
+语法：Date.getUTCMinutes()
+例子：
+
+let date=new Date()
+let test=date.getUTCMinutes()
+console.log(test);//比如现在上午11点30分，输出结果：30
+
+17.getUTCMonth() 方法
+作用：返回一个表示月份的数字。值是 0（一月） ~ 11（十二月） 之间中的一个整数。
+语法：Date.getUTCMonth()
+例子：
+
+let date=new Date()
+let test=date.getUTCMonth()
+console.log(test);//比如现在三月份，输出结果为：2
+
+18.getUTCSeconds() 方法
+作用：根据世界时返回时间的秒数（0~59）。
+语法：Date.getUTCSeconds()
+例子：
+
+let date=new Date()
+let test=date.getUTCSeconds()
+console.log(test);//如果当前时间未11点30分20秒，输出结果：20
+
+19.toDateString() 方法
+作用：把 Date 对象的日期部分转换为字符串，并返回结果。
+语法：Date.toDateString()
+例子：
+
+let date=new Date()
+let test=date.toDateString()
+console.log(test);//输出结果：Thu Mar 02 2023
+
+20.parse()
+作用：解析一个日期时间字符串，并返回 1970/1/1 午夜距离该日期时间的毫秒数。
+语法：Date.parse(datestring)
+
+参数	描述
+datestring	必需。表示日期和时间的字符串。
+例子：
+
+let test=Date.parse("March 21, 2012");
+console.log(test);//输出结果：1332259200000
+
+21.setDate() 方法
+作用：用于设置一个月的某一天。
+语法：Date.setDate(day)
+
+参数	描述
+day	必需。表示一个月中的一天的一个数值（1 ~ 31）:0 为上一个月的最后一天，-1 为上一个月最后一天之前的一天。如果当月有 31 天:32 为下个月的第一天。如果当月有 30 天:32 为下一个月的第二天
+例子：
+
+let date = new Date();
+date.setDate(0);
+console.log(date);//比如今天是2023年3月4号，输出结果：Tue Feb 28 2023 14:11:20 GMT+0800
+
+22.setFullYear() 方法
+作用：用于设置年份。可用于设置月份及月份中的一天。
+语法：Date.setFullYear(year,month,day)
+
+参数	描述
+year	必需。表示年份的四位整数。用本地时间表示。
+month	可选。表示月份的数值。用本地时间表示。介于 0 到 11 之间的整数值，表示从一月到十二月。-1 为去年的最后一个月，12 为明年的第一个月，13 为明年的第二个月
+day	可选。表示一个月中的一天的一个数值（1 ~ 31）:0 为上一个月的最后一天，-1 为上一个月最后一天之前的一天。如果当月有 31 天:32 为下个月的第一天。如果当月有 30 天:32 为下一个月的第二天
+例子:
+
+let date = new Date();
+date.setFullYear(2022,0,1);//这里代表的是2022年1月1号
+console.log(date);//输出结果：Sat Jan 01 2022 14:23:41 GMT+0800
+
+23.setHours() 方法
+作用：用于设置指定的时间的小时字段。该方法可用于设置分钟，秒以及毫秒数。
+语法：Date.setHours(hour,min,sec,millisec)
+
+参数	描述
+hour	必需。表示小时的数值，介于 0（午夜） ~ 23（晚上11点） 之间，以本地时间计（下同）。-1 为昨天的最后一小时，24 为明天的第一小时y
+min	可选。表示分钟的数值，介于 0 ~ 59 之间。-1 为上一小时的最后一分钟，60 为下一小时的第一分钟
+sec	可选。表示秒的数值，介于 0 ~ 59 之间。-1 为上一分钟的最后一秒，60 为下一分钟的第一秒钟
+millisec	可选。表示毫秒的数值，介于 0 ~ 999之间。-1 为上一秒钟的最后一毫秒，1000 为下一秒钟的第一毫秒
+例子：
+
+let date = new Date();
+date.setHours(15,35,1,1);//这个代表的意思是下午3点35分1秒1毫秒
+console.log(date);//输出结果：Sat Mar 04 2023 15:35:01
+
+24.setMilliseconds() 方法
+作用：用于设置指定时间的毫秒字段。
+语法：Date.setMilliseconds(millisec)
+
+参数	描述
+millisec	必需。用于设置 dateObject 毫秒字段，该参数是介于 0 ~ 999 之间的整数。-1 为上一秒钟的最后一毫秒，1000 为下一秒钟的第一毫秒，1001 为下一秒钟的第二毫秒
+例子：
+
+let date = new Date();
+date.setMilliseconds(555);
+let test=date.getMilliseconds()
+console.log(test);//输出结果：555
+
+25.setMinutes() 方法
+作用：用于设置指定时间的分钟字段。该方法同样可用于设置秒数与毫秒数。
+语法：Date.setMinutes(min,sec,millisec)
+
+参数	描述
+min	必需。表示分钟的数值，介于 0 ~ 59 之间，以本地时间计。-1 为上一小时的最后一分钟,60 为下一小时的第一分钟
+sec	可选。表示秒的数值，介于 0 ~ 59 之间。-1 为上一分钟的最后一秒，60 为下一分钟的第一秒
+millisec	可选。表示毫秒的数值，介于 0 ~ 999 之间。-1 为上一秒钟的最后一毫秒，1000 为下一秒钟的的第一毫秒
+例子：
+
+let date = new Date();
+date.setMinutes(date.getMinutes()-60,30);//时间1小时前，秒数为30
+console.log(date);//当前时间为Sat Mar 04 2023 15:31:01，输出结果：Sat Mar 04 2023 14:31:30
+
+26.setMonth() 方法
+作用：用于设置月份。也可用于设置月份中的某一天。
+语法：Date.setMonth(month,day)
+
+参数	秒数
+month	必需。一个表示月份的数值，该值介于 0（一月） ~ 11（十二月） 之间 。-1 为去年的最后一个月，12 为明年的第一个月，13 为明年的第二个月
+day	可选。一个表示月的某一天的数值，该值介于 1 ~ 31 之间。0 为上个月的最后一天，-1 为上个月的最后一天之前的一天。如果当月有31天，32 为下个月的第一天。如果当月有30天，32 为下个月的第二天
+例子：
+
+let date = new Date();
+date.setMonth(4,20)//表示5月20号
+console.log(date);//输出结果
+
+27.setSeconds() 方法
+作用：用于设置日期对象的秒字段。这个方法可以用于设置毫秒数。
+语法：Date.setSeconds(sec,millisec)
+
+参数	描述
+sec	必需。表示秒的数值，该值是介于 0 ~ 59 之间的整数。-1 为前一分钟的最后一秒，60 为下一分钟的第一秒
+millisec	可选。表示毫秒的数值，介于 0 ~ 999 之间
+例子
+
+let date = new Date();
+date.setSeconds(35,825)
+console.log(date+":"+date.getMilliseconds());
+//输出结果：Sat Mar 04 2023 16:26:35 GMT+0800 (台北标准时间):825
+
+28.setTime() 方法
+作用：以毫秒设置 Date 对象。
+语法：Date.setTime(millisec)
+
+参数	描述
+millisec	必需。要设置的日期和时间据 GMT 时间 1970 年 1 月 1 日午夜之间的毫秒数。这种类型的毫秒值可以传递给 Date() 构造函数，可以通过调用 Date.UTC() 和 Date.parse() 方法获得该值。以毫秒形式表示日期可以使它独立于时区。
+例子：
+
+let date = new Date();
+date.setTime(-1332403882588);
+console.log(date);//输出结果：Wed Oct 12 1927 23:48:37 GMT+0800
+
+29.setUTCDate() 方法
+作用：根据世界时返回一个月 (UTC) 中的某一天。
+语法和例子参照setDate() 方法
+
+30.setUTCFullYear() 方法
+作用：据世界时 (UTC) 设置年份。
+语法和例子参照setFullYear() 方法
+
+31.setUTCHours() 方法
+作用：根据世界时 (UTC) 设置小时（0 - 23）。该方法可用于设置分钟数，秒数以及毫米数。
+语法和例子参照setHours() 方法
+
+32.setUTCMilliseconds() 方法
+作用：用于根据世界时 (UTC) 设置指定时间的毫秒。
+语法和例子参照setMilliseconds() 方法
+
+33.setUTCMinutes() 方法
+作用：用于根据世界时 (UTC) 来设置指定时间的分钟
+语法和例子参照setMinutes() 方法
+
+34.setUTCMonth() 方法
+作用：用于根据世界时 (UTC) 来设置月份。这个方法可以适用于设置月份的某一天。
+语法和例子参照setMonth() 方法
+
+35.setUTCSeconds() 方法
+作用：用于根据世界时 (UTC) 设置指定时间的秒字段。
+语法和例子参照setSeconds() 方法
+
+36.toISOString() 方法
+作用：可以使用ISO标准将 Date 对象转换为字符串。
+语法：Date.toISOString()
+例子：
+
+let date = new Date();
+let test=date.toISOString()
+console.log(test);输出结果类似：2023-03-04T09:23:21.817Z
+
+37.toJSON() 方法
+作用：将 Date 对象转换为字符串，并格式化为 JSON 数据格式。
+语法：Date.toJSON()
+例子：
+
+let date = new Date();      
+let test=date.toJSON()
+console.log(test);//输出结果类似：2023-03-04T09:27:25.284Z
+
+38.toLocaleDateString() 方法
+作用：根据本地时间把 Date 对象的日期部分转换为字符串，并返回结果
+语法：Date.toLocaleDateString()
+例子：
+
+let date=new Date();
+let test=date.toLocaleDateString();
+console.log(test)//比如今天时间是2023年3月5号，输出结果：2023/02/05
+
+39.toLocaleTimeString() 方法
+作用：据本地时间把 Date 对象的时间部分转换为字符串，并返回结果。
+语法：Date.toLocaleTimeString()
+例子：
+
+let date=new Date();
+let test=date.toLocaleTimeString();
+console.log(test)//比如现在时间为是2023年3月5号下午8点48分10秒，输出结果：下午8:48:10
+
+40.toLocaleString()方法
+作用：根据本地时间把 Date 对象转换为字符串，并返回结果。
+语法： Date.toLocaleString()
+例子：
+
+let date=new Date();
+let test=date.toLocaleString();
+console.log(test)//比如现在结果时间为2023年3月5号下午8点48分10秒，输出结果：2023/3/5 下午8:48:10
+
+41.toString() 方法
+作用：把 Date 对象转换为字符串，并返回结果。
+语法：Date.toString()
+例子：
+
+let date=new Date();
+let test=date.toString();
+console.log(test)//输出结果：Sun Mar 05 2023 21:00:04 GMT+0800 (中国标准时间)
+
+42.toTimeString()方法
+作用：把 Date 对象的时间部分转换为字符串，并返回结果。
+语法： Date.toTimeString()
+例子：
+
+let date=new Date();
+let test=date.toTimeString();
+console.log(test);//输出结果类似于：21:14:35 GMT+0800 (中国标准时间)
+
+43.toUTCString() 方法
+作用：根据世界时 (UTC) 把 Date 对象转换为字符串，并返回结果。
+语法： Date.toUTCString()
+例子：
+
+let date=new Date();
+let test=date.toUTCString();
+console.log(test);//输出结果类似于：Sun, 05 Mar 2023 13:22:26 GMT
+
+44.UTC() 方法
+作用：根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数
+语法： Date.UTC(year,month,day,hours,minutes,seconds,millisec)
+
+参数	描述
+year	必需。表示年份的四位数字。
+month	必需。表示月份的整数，介于 0 ~ 11。
+day	必需。表示日期的整数，介于 1 ~ 31。
+hours	可选。表示小时的整数，介于 0 ~ 23。
+minutes	可选。表示分钟的整数，介于 0 ~ 59。
+seconds	可选。表示秒的整数，介于 0 ~ 59。
+ms	可选。表示毫秒的整数，介于0~999。
+例子：
+
+let test=Date.UTC(2023,1,1)
+console.log(test);输出结果：1675209600000
+
+45.valueOf() 方法
+作用：返回 Date 对象的原始值。原始值返回1970年1月1日午夜以来的毫秒数！
+语法：Date.valueOf()
+例子：
+
+let date=new Date();
+let test=date.valueOf();
+console.log(test);//输出值类似：1678028548436
