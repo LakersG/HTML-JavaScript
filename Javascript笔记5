@@ -26,3 +26,100 @@ click事件指的是，用户在同一个位置先完成mousedown动作，再完
 dblclick事件则会在mousedown、mouseup、click之后触发。
 
 mouseover事件和mouseenter事件，都是鼠标进入一个节点时触发。两者的区别是，mouseenter事件只触发一次，而只要鼠标在节点内部移动，mouseover事件会在子节点上触发多次。
+
+<style>
+        .box1{
+            width: 100px;
+            height:100px;
+            background-color: aqua;
+        }
+
+        .box2{
+            width: 100px;
+            height:100px;
+            background-color: red;
+        }
+
+        .box3{
+            width: 100px;
+            height:100px;
+            background-color: blue;
+        }
+
+        .container{
+            width: 500px;
+            height:500px;
+            background-color: black;
+        }
+
+        .box4{
+            width: 100px;
+            height:100px;
+            background-color: green;
+        }
+    </style>
+
+ <button id="btn1">单击</button>
+    <button id="btn2">双击</button>
+    <button id="btn3">鼠标按下</button>
+    <button id="btn4">鼠标抬起</button>
+    <div id="btn5" class="box1"></div>
+    <div id="btn6" class="box2"></div>
+    <div id="btn7" class="box3"></div>
+    <div id="root" class="container">
+        <div class="box4"></div>
+    </div>
+
+    
+    <script>
+        var btn1=document.getElementById("btn1");
+        var btn2=document.getElementById("btn2");
+        var btn3=document.getElementById("btn3");
+        var btn4=document.getElementById("btn4");
+        var BTN5=document.getElementById("btn5")
+        //直接用HTML中的id好像也行
+
+
+
+        //这里使用DOM0事件
+        btn1.onclick = function()
+        {
+            console.log("单击事件");
+        }
+
+
+        btn2.ondblclick = function()
+        {
+            console.log("双击事件");
+        }
+
+        btn3.onmousedown=function()
+        {
+            console.log("鼠标按下的一瞬间");
+        }
+
+        btn4.onmouseup=function()
+        {
+            console.log("鼠标抬起的一瞬间");
+        }
+
+        BTN5.onmousemove=function()
+        {
+            console.log("鼠标移动");
+        }
+
+        btn6.onmouseenter=function()
+        {
+            console.log("鼠标进入");
+        }
+
+        btn7.onmouseleave=function()
+        {
+            console.log("鼠标离开");
+        }
+
+        root.onmouseover=function()
+        {
+            console.log("父类进子类和子类进父类都会触发");
+        }
+
