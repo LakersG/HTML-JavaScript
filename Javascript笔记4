@@ -95,7 +95,7 @@ JS操作网页的接口
         alert("点击一次");
     }
 
-    //DEM2事件,可以多个事件，比较麻烦
+    //DOM2事件,可以多个事件，比较麻烦
     var button2 =document.getElementById("button");
     button1.addEventListener("click",function(){
         console.log("点击一次");
