@@ -1,0 +1,18 @@
+键盘事件
+1.keydown 按下键盘触发
+2.keypress 按下有值的键触发
+3.keyup 松开键盘触发
+
+    <input type="text" id="username">
+
+    <script>
+
+        var username=document.getElementById("username");
+        username.onkeyup=function(e)
+        {
+            console.log(e.target.value);
+            console.log("键盘输入");
+        }
+
+    </script>
+
