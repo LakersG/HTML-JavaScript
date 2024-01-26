@@ -30,6 +30,44 @@ console.log()
 
 数据类型（六种）
 
+原始数据类型：
+数值、字符串、bool
+
+引用数据类型
+null、undefined、对象
+null指对象为空
+undefined指数值为空
+
+判断数据类型
+typeof + 变量名 = number/string/Boolean/object
+
+算数运算符
++ - * / %
+
+赋值运算符
+= += -= *= /= %=
+
+比较
+> < = <= >= == ===
+
+布尔
+! && || 
+
+选择
+if-else switch-case
+
+三元运算符
+_?_=_
+
+循环
+for while
+
+<br>换行
+
+跳出
+break continue
+
+------------------------------------------------------
 
 
 
