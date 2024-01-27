@@ -20,8 +20,91 @@
 
 表单事件
 input
+{
+    input事件当<input>、<select>、<textarea>的值发生变化的时候触发
+    对于复选框<input type=checkbox> 单选框<input type=radio>
+
+    特点：会连续出发，用户每按下一次按键，都会触发一次input事件
+}
+
 select
+选中输入框的内容时输出
+
 Change
+与input事件不同，统一修改完之后它才会触发//回车、失去焦点
+
 reset
 submit
+这两个事件发生在表单对象
+reset：重置表单（删除所有）时发生
+
+ <input type="text" id="username">
+    <form id="myform">
+        <input type="text">
+        <button id="resetBtn">清空</button>
+    </form>
+
+    <script>
+
+        var username=document.getElementById("username");
+
+        username.onkeyup=function(e)
+        {
+            console.log(e.target.value);
+            console.log("键盘输入");
+        }
+
+        username.oninput=function(e)
+        {
+            console.log(e.target.value);//输入什么就在控制台打印什么
+        }
+
+        username.onselect=function()
+        {
+            console.log("选中了");
+        }
+
+        username.onchange=function()
+        {
+            console.log("change");
+        }
+
+        var reset=document.getElementById("resetBtn");
+        var myform=document.getElementById("myform");
+        reset.onclick=function()
+        {
+            myform.reset();//触发在表单上，清空表单
+        }
+
+    </script>
+
+
+    submit
+    把表单数据提交给服务器
+        <form id="myform" onsubmit="submitHandle" >
+        <input type="text" name="username">
+        <button id="resetBtn">提交</button>
+    </form>
+    
+    <script>
+
+        function submitHandle()
+        {
+            console.log("已提交");
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
