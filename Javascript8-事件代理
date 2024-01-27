@@ -1,0 +1,29 @@
+事件代理（事件委托）
+由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。
+这种方法叫事件的代理（delegation）
+
+    <ul id="list">
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+        <p>段落1</p>
+    </ul>
+
+    <script>
+        var list = document.getElementById("list");
+         list.onclick = function()
+         {
+             console.log("点击了ul下的子类li标签");
+         }
+
+        list.addEventListener("click",function(e){ //使用DOM2事件
+            console.log(e.target.tagName);
+            if(e.target.tagName === "LI")//默认是大写，可以通过toLowerCase()
+            {
+                console.log("点击了li标签");
+                console.log(e.target.innerHTML);
+            }
+        //只有li标签被点击时会触发
+        })
+
+    </script>
