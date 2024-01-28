@@ -47,3 +47,77 @@ setInterval（function(){},秒数（间隔多少毫秒执行））
             }
         
         }, 300);
+
+--------------------------------------------------------
+
+防抖和节流
+
+防抖（debounce）
+属于性能优化的知识，放任不管容易引起浏览器卡死
+
+        function showTop()
+        {
+            var scrollTop = document.documentElement.scrollTop;
+            console.log("滚动条位置："+ scrollTop);
+        }
+        window.onscroll = showTop;//不用加括号
+
+问题：执行次数过于频繁
+解决思路：
+1.第一次出发事件时，不立即执行函数，而是给出一个期限值比如200ms，
+如果200ms内再次触发滚动事件，那么取消当前的计时，重新计时
+如果200ms内没有再次触发，执行函数
+
+        function debounce(fn,delay){
+            var timer = null;
+            return function()
+            {
+                if(timer){
+                clearTimeout(timer)
+            }
+            timer = setTimeout(fn,delay)
+            }
+        }
+        window.onscroll = debounce(showTop,200);
+
+        function showTop()
+        {
+            var scrollTop = document.documentElement.scrollTop;
+            console.log("滚动条位置："+ scrollTop);
+        }
+
+---------------------------------------------------------------
+节流
+属于性能优化的知识
+防抖中若用户拖着滚动条不动的话无法输出
+
+        functinon throttle(fn,delay)
+        {
+            var valid = true;
+            return function(){
+                if(!valid){
+                    return false;
+                }
+                valid=false;
+                setTimeout(function(){
+                    fn();
+                    valid = true;
+                },delay)
+            }
+        }
+        window.onscroll = throttle(showTop,200);
+
+
+        function showTop()
+        {
+            var scrollTop = document.documentElement.scrollTop;
+            console.log("滚动条位置："+ scrollTop);
+        }
+
+
+
+
+
+
+
+
