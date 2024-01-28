@@ -27,3 +27,17 @@ setInterval
 setInterval（function(){},秒数（间隔多少毫秒执行））
 写法和setTimeout完全一致
 实现动画
+
+        var div=document.getElementById("index");
+        var opacity = 1;
+        var fader = setInterval(function() {
+            opacity-=0.5;
+            if(opacity>0)
+            {
+                div.style.opacity = opacity;
+            }else{
+                clearInterval(fader);
+            }
+            
+
+        }, 3000);
